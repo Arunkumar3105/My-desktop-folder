@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 100px;
+        background-image: url("back1.jpg");
+        background-size: 1400px;
+        background-repeat: no-repeat;
+      }
+      #group {
+        border: 1px solid black;
+        border-radius: 10px;
+        box-shadow: 5px 5px 25px 15px grey;
+        border: none;
+        background-image: linear-gradient(
+          to top right,
+          white 80%,
+          grey 10%,
+          turquoise
+        );
+      }
+      form {
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+      }
+      input {
+        width: 420px;
+        height: 40px;
+
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border: 1px solid grey;
+        margin-top: 5px;
+        font-weight: bold;
+      }
+      button {
+        width: 100%;
+        margin-top: 30px;
+        height: 30px;
+        background-image: linear-gradient(to right, turquoise, grey);
+        color: white;
+        border: none;
+        margin-bottom: 10px;
+      }
+      button:hover {
+        transition: 1s;
+        background-image: linear-gradient(to right, grey, turquoise);
+      }
+      label {
+        display: block;
+        padding-top: 20px;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: turquoise;
+        font-size: 20px;
+      }
+
+      .form-control small {
+        color: red;
+
+        visibility: hidden;
+      }
+
+      h2 {
+        text-align: center;
+        border-bottom: linear-gradient(to right, rgb(3, 182, 253), grey);
+      }
+      small {
+        font-size: 16px;
+      }
+      .form-control i {
+        position: absolute;
+        margin-left: 400px;
+        margin-top: -35px;
+
+        visibility: hidden;
+      }
+      .form-control.error i.fa-exclamation-circle {
+        color: red;
+        visibility: visible;
+      }
+      .form-control.success i.fa-check-circle {
+        color: green;
+        visibility: visible;
+      }
+      .form-control.success input {
+        border-color: green;
+      }
+      .form-control.error small {
+        visibility: visible;
+        color: red;
+      }
+      .form-control.success small {
+        visibility: hidden;
+      }
+      .form-control.error input {
+        border-color: red;
+      }
+      /* i {
+        margin-top: -35px;
+        color: red;
+        visibility: hidden;
+      } */
+      @media (max-width: 800px) {
+        #group {
+          width: 300px;
+          cursor: pointer;
+          margin-left: -18px;
+        }
+        input {
+          width: 280px;
+        }
+        .form-control i {
+          margin-left: 260px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="group">
+      <h2>Login</h2>
+      <form id="form" class="form">
+        <div class="form-control">
+          <label for="username">Username</label>
+          <input type="text" id="username" /><br />
+          <i class="fas fa-exclamation-circle"></i>
+          <i class="fas fa-check-circle"></i>
+          <small>Error</small>
+        </div>
+        <div class="form-control">
+          <label for="password">Password</label>
+          <input type="password" id="password" /><br />
+          <i class="fas fa-exclamation-circle"></i>
+          <i class="fas fa-check-circle"></i>
+          <small>Error</small>
+        </div>
+        <button type="submit" id="submit" name="submit">LOGIN</button>
+      </form>
+    </div>
+
+    <script>
+      const username = document.querySelector("#username");
+      const password = document.querySelector("#password");
+      const submit = document.querySelector("#submit");
+      submit.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (username.value.trim() === "") {
+          error(username, "username cannot be empty");
+        } else {
+          success(username);
+        }
+        if (password.value.trim() === "") {
+          error(password, "password cannot be empty");
+        } else {
+          success(password);
+        }
+      });
+      function error(element, msg) {
+        const parent = element.parentElement;
+        const small = parent.querySelector("small");
+        parent.className = "form-control error";
+        small.innerText = msg;
+      }
+      function success(element) {
+        const parent = element.parentElement;
+        parent.className = "form-control success";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,2524 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+      integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <style>
+      .sidebar {
+        position: fixed;
+        height: 100%;
+        /* background-image: linear-gradient(to bottom right,turquoise,white); */
+        background-color: grey;
+
+        margin-top: 50px;
+        left: 0;
+        width: 200px;
+      }
+
+      /* .b .sidebar ul li a {
+        display: block;
+      } */
+
+      .header {
+        background-color: rgb(21, 182, 166);
+        position: fixed;
+        width: 100%;
+        height: 50px;
+         border-bottom:2px solid red;
+      }
+      
+
+      /* .nav{
+        text-align: right;
+      } */
+
+      .a , .sc,.fr,.da,.drr {
+        padding: 60px;
+        margin-left: 130px;
+        display: none;
+      }
+
+      .c,
+      .d {
+        display: none;
+      }
+
+      ul li {
+        list-style-type: none;
+      }
+      /* .list-unstyled li:hover{
+        border-right:3px solid red;
+      }
+      #create li:hover{
+        border-right:none;
+        border-bottom:2px solid red;
+      }
+      #user li:hover{
+        border-right:none;
+      } */
+      .flex-container {
+        display: flex;
+        margin-left: 5%;
+      }
+
+      .first,
+      .second,
+      .a,
+      .address1,
+      
+      .address2,
+      .address3,
+      .address4,
+      .code,
+      .email,
+      .aemail,
+      .mno,
+      .amno,
+      .pfile,
+      .mnon,
+      .amnon,
+      .mnon1,
+      .amnon1,
+      .code1 {
+        flex: 50%;
+      }
+
+      select {
+        border-radius: 5px;
+        height: 30psx;
+      }
+
+      #fname,
+      #sname,
+      #line1,
+      #line2,
+      #line3,
+      #line4,
+      #mail,
+      #amail,
+      #num,
+      #num1,
+      #num2,
+      #lno,
+      #spc,
+      #doc1,
+      #fname1,
+      #sname1,
+      #line11,
+      #line22,
+      #line33,
+      #line44,
+      #mail1,
+      #amail1,
+      #num10,
+      #num11,
+      #num22,
+      #lno1,
+      #spc1,
+      #doc11,
+      #fname11,
+      #sname11,
+      #line111,
+      #line222,
+      #line333,
+      #line444,
+      #mail11,
+      #amail11,
+      #num12,
+      #num111,
+      #num222,
+      #lno11,
+      #spc11,
+      #doc111,
+      #fname111,
+      #sname111,
+      #line1111,
+      #line2222,
+      #line3333,
+      #line4444,
+      #mail111,
+      #amail111,
+      #num121,
+      #num1111,
+      #num2222,
+      #lno111,
+      #spc111,
+      #doc1111,
+      #fname112,
+      #sname112,
+      #line1112,
+      #line2223,
+      #line3334,
+      #line4445,
+      #mail112,
+      #amail112,
+      #num122,
+      #num1112,
+      #num2223,
+      #lno112,
+      #spc112,
+      #doc1112   {
+        width: 90%;
+        height: 25px;
+        border-radius: 5px;
+        border: 1px solid black;
+      }
+
+      #zcode,
+      #dsign,
+      #picture,#zcode1,
+      #dsign1,
+      #picture1,#zcode11,
+      #dsign11,
+      #picture11,
+      #zcode111,
+      #dsign111,
+      #picture111,
+      #zcode112,
+      #dsign112,
+      #picture112 {
+        width: 45%;
+        height: 25px;
+        border-radius: 5px;
+        border: 1px solid black;
+      }
+
+      input[type="file"] {
+        font-size: 17px;
+      }
+
+      .cd {
+        text-align: center;
+      }
+
+      .login ul li :hover {
+        background-color: white;
+        color: black;
+      }
+
+      ul li a {
+        text-decoration: none;
+        border-bottom: darkgreen;
+        color: black;
+      }
+
+      ul li a:hover {
+        text-decoration: none;
+
+        color: white;
+        transition: 0.3s ease-out;
+      }
+
+      #bar {
+        display: none;
+      }
+
+      .dotd {
+        display: none;
+      }
+
+      li {
+        margin-bottom: 10px;
+      }
+
+      #sub ,#sub1,#sub111,#sub112{
+        margin-top: 30px;
+        width: 150px;
+        background-color: rgb(8, 8, 75);
+        border: none;
+        border-radius: 5px;
+        color: aliceblue;
+        box-shadow: inset 0 0 0 0 grey;
+        transition: 0.3s ease-out;
+      }
+      #sub11{
+         margin-top: 30px;
+        width: 150px;
+        background-color: rgb(8, 8, 75);
+        border: none;
+        border-radius: 5px;
+        color: aliceblue;
+        box-shadow: inset 0 0 0 0 grey;
+        transition: 0.3s ease-out;
+      }
+
+      #sub:hover,#sub1:hover{
+        box-shadow: inset 150px 0 0 grey;
+        transition: 0.3s ease-out;
+        color: black;
+      }
+      #sub11:hover,#sub111:hover,#sub112:hover{
+        box-shadow: inset 150px 0 0 grey;
+        transition: 0.3s ease-out;
+        color: black;
+
+      }
+
+      .su {
+        display: flex;
+        justify-content: center;
+      }
+
+      .form-container i {
+        position: absolute;
+        margin-left: 32%;
+        margin-top: -20px;
+        visibility: hidden;
+      }
+
+      .form-container.error i.fa-exclamation-circle {
+        color: red;
+        visibility: visible;
+      }
+
+      .form-container.success i.fa-check-circle {
+        color: green;
+        visibility: visible;
+      }
+
+      .form-container.success input {
+        border-color: green;
+      }
+
+      .form-container.error small {
+        visibility: visible;
+        color: red;
+      }
+
+      .form-container.success small {
+        visibility: hidden;
+      }
+
+      .form-container.error input {
+        border-color: red;
+      }
+     
+
+      @media (max-width: 1370px) {
+        .form-container i {
+          margin-left: 31%;
+        }
+      }
+
+      @media (max-width: 1250px) {
+        .form-container i {
+          margin-left: 30%;
+        }
+        /* th  {
+                display: block;
+            } */
+      }
+
+      @media (max-width: 1300px) {
+        .header {
+          display: flex;
+          text-align: center;
+        }
+      }
+
+      @media (max-width: 980px) {
+        .form-container i {
+          margin-left: 26%;
+        }
+      }
+
+      @media (max-width: 800px) {
+        .flex-container {
+          display: block;
+        }
+        #zcode,
+      #dsign,
+      #picture,#zcode1,
+      #dsign1,
+      #picture1,#zcode11,
+      #dsign11,
+      #picture11,
+      #zcode111,
+      #dsign111,
+      #picture111,
+      #zcode112,
+      #dsign112,
+      #picture112 {
+          width: 90%;
+        }
+
+        .sidebar {
+          display: none;
+        }
+
+        #bar {
+          display: block;
+        }
+
+        .form-container i {
+          margin-left: 55%;
+        }
+
+        /* #n2,#n3,#n4 {
+                margin-left: -20px;
+            }
+          th  {
+                display: block;
+            } */
+      }
+
+      @media (max-width: 750px) {
+        .form-container i {
+          margin-left: 50%;
+        }
+      }
+
+      @media (max-width: 650px) {
+        .form-container i {
+          margin-left: 45%;
+        }
+      }
+
+      @media (max-width: 580px) {
+        .form-container i {
+          margin-left: 40%;
+        }
+      }
+
+      @media (max-width: 550px) {
+        .form-container i {
+          display: none;
+        }
+      }
+
+      .co {
+        visibility: visible;
+      }
+
+      small {
+        visibility: hidden;
+        color: red;
+      }
+
+      #n1 {
+        display: flex;
+
+        margin-top: 7%;
+      }
+      #n2 {
+        margin-left: 18%;
+        display: none;
+      }
+
+      tr #m {
+        text-align: center;
+        padding-left: 60px;
+        padding-right: 60px;
+      }
+      table,
+      tr,
+      th {
+        border: 1px solid black;
+      }
+      th {
+        padding-left: 12px;
+        padding-right: 12px;
+        background-color: rgb(41, 101, 101);
+        color: white;
+        height: 35px;
+      }
+
+      .f {
+        margin-left: 05%;
+      }
+
+      #f1 {
+        margin-top: 10%;
+      }
+
+      #n3 {
+        margin-left: 18%;
+        display: none;
+      }
+      #n4 {
+        margin-left: 18%;
+        display: none;
+      }
+     #n6 #n7{
+        margin-left:27%;
+      }
+      #n6,#m6,#p6,#o6,#q6{
+        margin-top:40px;
+        margin-left:20%;
+         display:none; 
+      
+      }
+      #n6 #n5 th{
+        padding-left:30px;
+        padding-right:30px;
+      }
+      #q6 th{
+        padding-left:30px;
+        padding-right:30px;
+
+      }
+      #o6 th{
+        padding-left:30px;
+        padding-right:30px;
+      }
+      #p6 th{
+        padding-left:30px;
+        padding-right:30px;
+      }
+      #m6 th{
+        padding-left:30px;
+        padding-right:30px;
+      }
+      #m6 #m7{
+        margin-left:26%;
+      }
+      #p6 #p7{
+        margin-left:26%;
+      }
+      #o6 #o7{
+        margin-left:26%;
+      }
+      #q6 #q7{
+        margin-left:43%;
+      }
+      body {
+        font-family: "Times New Roman", Times, serif;
+      }
+      li a.active{
+        color:white;
+        text-decoration:none;
+        padding-left:15px;
+      }
+      #createuser{
+        text-decoration:none;
+        
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- <div class="b"> -->
+      <!-- //sidebar -->
+      <div class="sidebar">
+        <ul class="list-unstyled f">
+          <li>
+            <a href="#user" data-toggle="collapse">
+              <h3>Users</h3>
+            </a>
+            <ul id="user" class="collapse">
+              <li>
+                <a id="createuser"
+                  href="#create"
+                  data-toggle="collapse"
+                  class="dropdown-collapse"
+                >
+                  <h4>Create User</h4>
+                </a>
+
+                <ul id="create" class="collapse">
+                  <li id="list"><a href="#">Admin</a></li>
+                  <li id="list1"><a href="#">Scheduler</a></li>
+                  <li id="list2"><a href="#">Front Desk</a></li>
+                  <li id="list3"><a href="#">Doctor Assistant</a></li>
+                  <li id="doc"><a href="#">Doctor</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#use" data-toggle="collapse" class="dropdown-collapse">
+                  <h4>View User</h4>
+                </a>
+
+                <ul id="use" class="collapse">
+                  <li id="list44"><a href="#">Admin</a></li>
+                  <li id="list45"><a href="#">Scheduler</a></li>
+                  <li id="list46"><a href="#">Front Desk</a></li>
+                  <li id="list47"><a href="#">Doctor Assistant</a></li>
+                  <li id="list48"><a href="#">Doctor</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li id="f1">
+            <a href="#cas" data-toggle="collapse">
+              <h3>Master</h3>
+            </a>
+            <ul id="cas" class="collapse">
+              <li>
+                <a href="#" id="n">
+                  <h4>Case</h4>
+                </a>
+                <a href="#" id="n12">
+                  <h4>Company</h4>
+                </a>
+                <a href="#" id="n13">
+                  <h4>Location</h4>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- //navbar -->
+
+      <div class="header" style="z-index: 1111">
+        <button id="bar"><i class="fa fa-bars"></i></button>
+      </div>
+    </div>
+
+    <div style="z-index: 1">
+      <form>
+        <div class="a">
+        <div style="display: block">
+          <div class="flex-container">
+            <div style="display: block" class="first">
+              <div>
+                <label>First Name</label><span style="color: red">*</span>
+              </div>
+              <div class="form-container">
+                <input type="text" name="fname" id="fname" /><br />
+                <i class="fas fa-exclamation-circle"></i>
+                <i class="fas fa-check-circle"></i>
+                <small>Error</small>
+              </div>
+            </div>
+            <div style="display: block" class="second">
+              <div>
+                <label>Initial Name</label><span style="color: red">*</span>
+              </div>
+              <div class="form-container">
+                <input type="text" name="sname" id="sname" /><br />
+                <i class="fas fa-exclamation-circle"></i>
+                <i class="fas fa-check-circle"></i>
+                <small>Error</small>
+              </div>
+            </div>
+          </div>
+          <br />
+          <div class="flex-container">
+            <div style="display: block" class="address1">
+              <div>
+                <label>Address Line1</label><span style="color: red">*</span>
+              </div>
+              <div class="form-container">
+                <input type="text" name="line1" id="line1" /><br />
+                <i class="fas fa-exclamation-circle"></i>
+                <i class="fas fa-check-circle"></i>
+                <small>Error</small>
+              </div>
+            </div>
+            <div style="display: block" class="address2">
+              <div>
+                <label>Address Line2</label><span style="color: red">*</span>
+              </div>
+              <div class="form-container">
+                <input type="text" name="line2" id="line2" /><br />
+                <i class="fas fa-exclamation-circle"></i>
+                <i class="fas fa-check-circle"></i>
+                <small>Error</small>
+              </div>
+            </div>
+          </div>
+          <br />
+
+          <div class="flex-container">
+            <div style="display: block" class="address3">
+              <div><label>Address Line3</label></div>
+              <div><input type="text" name="line3" id="line3" /></div>
+            </div>
+            <div style="display: block" class="address4">
+              <div><label>Address Line4</label></div>
+              <div><input type="text"  name="line4" id="line4" /></div>
+            </div>
+          </div>
+          <br />
+          <div class="flex-container">
+            <div style="display: block" class="code">
+              <div><label>Zipcode</label><span style="color: red">*</span></div>
+              <div class="form-container">
+                <input type="text" name="zcode" id="zcode" /><br />
+                <i class="fas fa-exclamation-circle"></i>
+                <i class="fas fa-check-circle"></i>
+                <small>Error</small>
+              </div>
+            </div>
+          </div>
+          <br />
+          <h2 class="cd">Contact Details</h2>
+
+          <div class="flex-container">
+            <div style="display: block" class="email">
+              <div><label>EmailId</label><span style="color: red">*</span></div>
+              <div class="form-container">
+                <input type="email"  name="mail" id="mail" /><br />
+                <i class="fas fa-exclamation-circle"></i>
+                <i class="fas fa-check-circle"></i>
+                <small>Error</small>
+              </div>
+            </div>
+            <div style="display: block" class="aemail">
+              <div><label>Alternate Email</label></div>
+              <div><input type="email" name="amail" id="amail" /></div>
+            </div>
+          </div>
+          <br />
+          <div class="flex-container">
+            <div style="display: block" class="mno">
+              <div>
+                <label>Mobile No</label><span style="color: red">*</span>
+              </div>
+              <div class="form-container">
+                <input type="number" name="num" id="num" /><br />
+                <i class="fas fa-exclamation-circle"></i>
+                <i class="fas fa-check-circle"></i>
+                <small>Error</small>
+              </div>
+            </div>
+            <div style="display: block" class="amno">
+              <div><label>Alternate Mobile Number</label></div>
+              <div><input type="number" name="num1" id="num1" /></div>
+            </div>
+          </div>
+          <br />
+          <div class="otd">
+            <h2 class="cd">Other Details</h2>
+            <div class="flex-container">
+              <div style="display: block" class="pfile">
+                <div>
+                  <label>Profile picture</label
+                  ><span style="color: red">*</span>
+                </div>
+                <br />
+                <div class="form-container">
+                  <input type="file" name="picture" id="picture" /><br />
+
+                  <small>Error</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="dotd">
+            <h2 class="cd">Other Details</h2>
+            <div class="flex-container">
+              <div style="display: block" class="mnon">
+                <div>
+                  <label>Doctor ID</label><span style="color: red">*</span>
+                </div>
+                <div class="form-container">
+                  <input type="text" name="doc1" id="doc1" /><br />
+                  <i class="fas fa-exclamation-circle"></i>
+                  <i class="fas fa-check-circle"></i>
+                  <small>Error</small>
+                </div>
+              </div>
+              <div style="display: block" class="amnon">
+                <div>
+                  <label>Speciality</label><span style="color: red">*</span>
+                </div>
+                <div class="form-container">
+                  <input type="text" name="spc" id="spc" /><br />
+                  <i class="fas fa-exclamation-circle"></i>
+                  <i class="fas fa-check-circle">1</i>
+                  <small>Error</small>
+                </div>
+              </div>
+            </div>
+            <div class="flex-container" style="margin-top: 10px">
+              <div style="display: block" class="mnon1">
+                <div>
+                  <label>License No</label><span style="color: red">*</span>
+                </div>
+                <div class="form-container">
+                  <input type="text" name="lno" id="lno" /><br />
+                  <i class="fas fa-exclamation-circle"></i>
+                  <i class="fas fa-check-circle"></i>
+                  <small>Error</small>
+                </div>
+              </div>
+              <div style="display: block" class="amnon1">
+                <div><label>WCB License No</label></div>
+                <div><input type="text" name="num2" id="num2" /></div>
+              </div>
+            </div>
+            <div class="flex-container" style="margin-top: 10px">
+              <div style="display: block" class="code1">
+                <div>
+                  <label>Digital Signature</label
+                  ><span style="color: red">*</span>
+                </div>
+                <div class="form-container">
+                  <input type="file" name="dsign" id="dsign" /><br />
+
+                  <small>Error</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="su">
+            <button name="sub" id="sub">Submit</button>
+          </div>
+        </div>
+   
+    </div>
+    
+    <div class="sc" style="z-index: 1">
+       
+          <div style="display: block">
+            <div class="flex-container">
+              <div style="display: block" class="first">
+                <div>
+                  <label>First Name</label><span style="color: red">*</span>
+                </div>
+                <div class="form-container">
+                  <input type="text" name="fname1" id="fname1" /><br />
+                  <i class="fas fa-exclamation-circle"></i>
+                  <i class="fas fa-check-circle"></i>
+                  <small>Error</small>
+                </div>
+              </div>
+              <div style="display: block" class="second">
+                <div>
+                  <label>Initial Name</label><span style="color: red">*</span>
+                </div>
+                <div class="form-container">
+                  <input type="text" name="sname1" id="sname1" /><br />
+                  <i class="fas fa-exclamation-circle"></i>
+                  <i class="fas fa-check-circle"></i>
+                  <small>Error</small>
+                </div>
+              </div>
+            </div>
+            <br />
+            <div class="flex-container">
+              <div style="display: block" class="address1">
+                <div>
+                  <label>Address Line1</label><span style="color: red">*</span>
+                </div>
+                <div class="form-container">
+                  <input type="text" name="line1" id="line11" /><br />
+                  <i class="fas fa-exclamation-circle"></i>
+                  <i class="fas fa-check-circle"></i>
+                  <small>Error</small>
+                </div>
+              </div>
+              <div style="display: block" class="address2">
+                <div>
+                  <label>Address Line2</label><span style="color: red">*</span>
+                </div>
+                <div class="form-container">
+                  <input type="text" name="line22" id="line22" /><br />
+                  <i class="fas fa-exclamation-circle"></i>
+                  <i class="fas fa-check-circle"></i>
+                  <small>Error</small>
+                </div>
+              </div>
+            </div>
+            <br />
+  
+            <div class="flex-container">
+              <div style="display: block" class="address3">
+                <div><label>Address Line3</label></div>
+                <div><input type="text" name="line33" id="line33" /></div>
+              </div>
+              <div style="display: block" class="address4">
+                <div><label>Address Line4</label></div>
+                <div><input type="text" name="line44" id="line44" /></div>
+              </div>
+            </div>
+            <br />
+            <div class="flex-container">
+              <div style="display: block" class="code">
+                <div><label>Zipcode</label><span style="color: red">*</span></div>
+                <div class="form-container">
+                  <input type="text" name="zcode1" id="zcode1" /><br />
+                  <i class="fas fa-exclamation-circle"></i>
+                  <i class="fas fa-check-circle"></i>
+                  <small>Error</small>
+                </div>
+              </div>
+            </div>
+            <br />
+            <h2 class="cd">Contact Details</h2>
+  
+            <div class="flex-container">
+              <div style="display: block" class="email">
+                <div><label>EmailId</label><span style="color: red">*</span></div>
+                <div class="form-container">
+                  <input type="email" name="mail1" id="mail1" /><br />
+                  <i class="fas fa-exclamation-circle"></i>
+                  <i class="fas fa-check-circle"></i>
+                  <small>Error</small>
+                </div>
+              </div>
+              <div style="display: block" class="aemail">
+                <div><label>Alternate Email</label></div>
+                <div><input type="email" name="amail1" id="amail1" /></div>
+              </div>
+            </div>
+            <br />
+            <div class="flex-container">
+              <div style="display: block" class="mno">
+                <div>
+                  <label>Mobile No</label><span style="color: red">*</span>
+                </div>
+                <div class="form-container">
+                  <input type="number" name="num10" id="num10" /><br />
+                  <i class="fas fa-exclamation-circle"></i>
+                  <i class="fas fa-check-circle"></i>
+                  <small>Error</small>
+                </div>
+              </div>
+              <div style="display: block" class="amno">
+                <div><label>Alternate Mobile Number</label></div>
+                <div><input type="number" name="num22" id="num22" /></div>
+              </div>
+            </div>
+            <br />
+            <div class="otd">
+              <h2 class="cd">Other Details</h2>
+              <div class="flex-container">
+                <div style="display: block" class="pfile">
+                  <div>
+                    <label>Profile picture</label
+                    ><span style="color: red">*</span>
+                  </div>
+                  <br />
+                  <div class="form-container">
+                    <input type="file"  name="picture1" id="picture1" /><br />
+  
+                    <small>Error</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="dotd">
+              <h2 class="cd">Other Details</h2>
+              <div class="flex-container">
+                <div style="display: block" class="mnon">
+                  <div>
+                    <label>Doctor ID</label><span style="color: red">*</span>
+                  </div>
+                  <div class="form-container">
+                    <input type="text" name="doc11" id="doc11" /><br />
+                    <i class="fas fa-exclamation-circle"></i>
+                    <i class="fas fa-check-circle"></i>
+                    <small>Error</small>
+                  </div>
+                </div>
+                <div style="display: block" class="amnon">
+                  <div>
+                    <label>Speciality</label><span style="color: red">*</span>
+                  </div>
+                  <div class="form-container">
+                    <input type="text" name="spc1" id="spc1" /><br />
+                    <i class="fas fa-exclamation-circle"></i>
+                    <i class="fas fa-check-circle"></i>
+                    <small>Error</small>
+                  </div>
+                </div>
+              </div>
+              <div class="flex-container" style="margin-top: 10px">
+                <div style="display: block" class="mnon1">
+                  <div>
+                    <label>License No</label><span style="color: red">*</span>
+                  </div>
+                  <div class="form-container">
+                    <input type="text" id="lno1" /><br />
+                    <i class="fas fa-exclamation-circle"></i>
+                    <i class="fas fa-check-circle"></i>
+                    <small>Error</small>
+                  </div>
+                </div>
+                <div style="display: block" class="amnon1">
+                  <div><label>WCB License No</label></div>
+                  <div><input type="text" id="num21" /></div>
+                </div>
+              </div>
+              <div class="flex-container" style="margin-top: 10px">
+                <div style="display: block" class="code1">
+                  <div>
+                    <label>Digital Signature</label
+                    ><span style="color: red">*</span>
+                  </div>
+                  <div class="form-container">
+                    <input type="file" id="dsign1" /><br />
+  
+                    <small>Error</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="su">
+              <button name="sub1" id="sub1">Submit</button>
+            </div>
+          </div>
+     
+      </div>
+      
+      <div class="fr" style="z-index: 1">
+       
+          <div style="display: block">
+            <div class="flex-container">
+              <div style="display: block" class="first">
+                <div>
+                  <label>First Name</label><span style="color: red">*</span>
+                </div>
+                <div class="form-container">
+                  <input type="text" name="fname11" id="fname11" /><br />
+                  <i class="fas fa-exclamation-circle"></i>
+                  <i class="fas fa-check-circle"></i>
+                  <small>Error</small>
+                </div>
+              </div>
+              <div style="display: block" class="second">
+                <div>
+                  <label>Initial Name</label><span style="color: red">*</span>
+                </div>
+                <div class="form-container">
+                  <input type="text" name="sname11" id="sname11" /><br />
+                  <i class="fas fa-exclamation-circle"></i>
+                  <i class="fas fa-check-circle"></i>
+                  <small>Error</small>
+                </div>
+              </div>
+            </div>
+            <br />
+            <div class="flex-container">
+              <div style="display: block" class="address1">
+                <div>
+                  <label>Address Line1</label><span style="color: red">*</span>
+                </div>
+                <div class="form-container">
+                  <input type="text" name="line111" id="line111" /><br />
+                  <i class="fas fa-exclamation-circle"></i>
+                  <i class="fas fa-check-circle"></i>
+                  <small>Error</small>
+                </div>
+              </div>
+              <div style="display: block" class="address2">
+                <div>
+                  <label>Address Line2</label><span style="color: red">*</span>
+                </div>
+                <div class="form-container">
+                  <input type="text" name="line222" id="line222" /><br />
+                  <i class="fas fa-exclamation-circle"></i>
+                  <i class="fas fa-check-circle"></i>
+                  <small>Error</small>
+                </div>
+              </div>
+            </div>
+            <br />
+  
+            <div class="flex-container">
+              <div style="display: block" class="address3">
+                <div><label>Address Line3</label></div>
+                <div><input type="text" name="line333" id="line333" /></div>
+              </div>
+              <div style="display: block" class="address4">
+                <div><label>Address Line4</label></div>
+                <div><input type="text" name="line444" id="line444" /></div>
+              </div>
+            </div>
+            <br />
+            <div class="flex-container">
+              <div style="display: block" class="code">
+                <div><label>Zipcode</label><span style="color: red">*</span></div>
+                <div class="form-container">
+                  <input type="text" name="zcode11" id="zcode11" /><br />
+                  <i class="fas fa-exclamation-circle"></i>
+                  <i class="fas fa-check-circle"></i>
+                  <small>Error</small>
+                </div>
+              </div>
+            </div>
+            <br />
+            <h2 class="cd">Contact Details</h2>
+  
+            <div class="flex-container">
+              <div style="display: block" class="email">
+                <div><label>EmailId</label><span style="color: red">*</span></div>
+                <div class="form-container">
+                  <input type="email" name="mail11" id="mail11" /><br />
+                  <i class="fas fa-exclamation-circle"></i>
+                  <i class="fas fa-check-circle"></i>
+                  <small>Error</small>
+                </div>
+              </div>
+              <div style="display: block" class="aemail">
+                <div><label>Alternate Email</label></div>
+                <div><input type="email" name="amail11" id="amail11" /></div>
+              </div>
+            </div>
+            <br />
+            <div class="flex-container">
+              <div style="display: block" class="mno">
+                <div>
+                  <label>Mobile No</label><span style="color: red">*</span>
+                </div>
+                <div class="form-container">
+                  <input type="number" name="num12" id="num12" /><br />
+                  <i class="fas fa-exclamation-circle"></i>
+                  <i class="fas fa-check-circle"></i>
+                  <small>Error</small>
+                </div>
+              </div>
+              <div style="display: block" class="amno">
+                <div><label>Alternate Mobile Number</label></div>
+                <div><input type="number" name="num222" id="num222" /></div>
+              </div>
+            </div>
+            <br />
+            <div class="otd">
+              <h2 class="cd">Other Details</h2>
+              <div class="flex-container">
+                <div style="display: block" class="pfile">
+                  <div>
+                    <label>Profile picture</label
+                    ><span style="color: red">*</span>
+                  </div>
+                  <br />
+                  <div class="form-container">
+                    <input type="file" name="picture11" id="picture11" /><br />
+  
+                    <small>Error</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="dotd">
+              <h2 class="cd">Other Details</h2>
+              <div class="flex-container">
+                <div style="display: block" class="mnon">
+                  <div>
+                    <label>Doctor ID</label><span style="color: red">*</span>
+                  </div>
+                  <div class="form-container">
+                    <input type="text" id="doc111" /><br />
+                    <i class="fas fa-exclamation-circle"></i>
+                    <i class="fas fa-check-circle"></i>
+                    <small>Error</small>
+                  </div>
+                </div>
+                <div style="display: block" class="amnon">
+                  <div>
+                    <label>Speciality</label><span style="color: red">*</span>
+                  </div>
+                  <div class="form-container">
+                    <input type="text" id="spc11" /><br />
+                    <i class="fas fa-exclamation-circle"></i>
+                    <i class="fas fa-check-circle"></i>
+                    <small>Error</small>
+                  </div>
+                </div>
+              </div>
+              <div class="flex-container" style="margin-top: 10px">
+                <div style="display: block" class="mnon1">
+                  <div>
+                    <label>License No</label><span style="color: red">*</span>
+                  </div>
+                  <div class="form-container">
+                    <input type="text" id="lno11" /><br />
+                    <i class="fas fa-exclamation-circle"></i>
+                    <i class="fas fa-check-circle"></i>
+                    <small>Error</small>
+                  </div>
+                </div>
+                <div style="display: block" class="amnon1">
+                  <div><label>WCB License No</label></div>
+                  <div><input type="text" id="num211" /></div>
+                </div>
+              </div>
+              <div class="flex-container" style="margin-top: 10px">
+                <div style="display: block" class="code1">
+                  <div>
+                    <label>Digital Signature</label
+                    ><span style="color: red">*</span>
+                  </div>
+                  <div class="form-container">
+                    <input type="file" id="dsign11" /><br />
+  
+                    <small>Error</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="su">
+              <button name="sub11" id="sub11">Submit</button>
+            </div>
+          </div>
+  
+      </div>
+      
+      <div class="da" style="z-index: 1">
+       
+          <div style="display: block">
+            <div class="flex-container">
+              <div style="display: block" class="first">
+                <div>
+                  <label>First Name</label><span style="color: red">*</span>
+                </div>
+                <div class="form-container">
+                  <input type="text" name="fname111" id="fname111" /><br />
+                  <i class="fas fa-exclamation-circle"></i>
+                  <i class="fas fa-check-circle"></i>
+                  <small>Error</small>
+                </div>
+              </div>
+              <div style="display: block" class="second">
+                <div>
+                  <label>Initial Name</label><span style="color: red">*</span>
+                </div>
+                <div class="form-container">
+                  <input type="text" name="sname111" id="sname111" /><br />
+                  <i class="fas fa-exclamation-circle"></i>
+                  <i class="fas fa-check-circle"></i>
+                  <small>Error</small>
+                </div>
+              </div>
+            </div>
+            <br />
+            <div class="flex-container">
+              <div style="display: block" class="address1">
+                <div>
+                  <label>Address Line1</label><span style="color: red">*</span>
+                </div>
+                <div class="form-container">
+                  <input type="text" name="line1111" id="line1111" /><br />
+                  <i class="fas fa-exclamation-circle"></i>
+                  <i class="fas fa-check-circle"></i>
+                  <small>Error</small>
+                </div>
+              </div>
+              <div style="display: block" class="address2">
+                <div>
+                  <label>Address Line2</label><span style="color: red">*</span>
+                </div>
+                <div class="form-container">
+                  <input type="text" name="line2222" id="line2222" /><br />
+                  <i class="fas fa-exclamation-circle"></i>
+                  <i class="fas fa-check-circle"></i>
+                  <small>Error</small>
+                </div>
+              </div>
+            </div>
+            <br />
+  
+            <div class="flex-container">
+              <div style="display: block" class="address3">
+                <div><label>Address Line3</label></div>
+                <div><input type="text" name="line3333" id="line3333" /></div>
+              </div>
+              <div style="display: block" class="address4">
+                <div><label>Address Line4</label></div>
+                <div><input type="text" name="line4444" id="line4444" /></div>
+              </div>
+            </div>
+            <br />
+            <div class="flex-container">
+              <div style="display: block" class="code">
+                <div><label>Zipcode</label><span style="color: red">*</span></div>
+                <div class="form-container">
+                  <input type="text" name="zcode111" id="zcode111" /><br />
+                  <i class="fas fa-exclamation-circle"></i>
+                  <i class="fas fa-check-circle"></i>
+                  <small>Error</small>
+                </div>
+              </div>
+            </div>
+            <br />
+            <h2 class="cd">Contact Details</h2>
+  
+            <div class="flex-container">
+              <div style="display: block" class="email">
+                <div><label>EmailId</label><span style="color: red">*</span></div>
+                <div class="form-container">
+                  <input type="email" name="mail111" id="mail111" /><br />
+                  <i class="fas fa-exclamation-circle"></i>
+                  <i class="fas fa-check-circle"></i>
+                  <small>Error</small>
+                </div>
+              </div>
+              <div style="display: block" class="aemail">
+                <div><label>Alternate Email</label></div>
+                <div><input type="email" name="amail111" id="amail111" /></div>
+              </div>
+            </div>
+            <br />
+            <div class="flex-container">
+              <div style="display: block" class="mno">
+                <div>
+                  <label>Mobile No</label><span style="color: red">*</span>
+                </div>
+                <div class="form-container">
+                  <input type="number" name="num121" id="num121" /><br />
+                  <i class="fas fa-exclamation-circle"></i>
+                  <i class="fas fa-check-circle"></i>
+                  <small>Error</small>
+                </div>
+              </div>
+              <div style="display: block" class="amno">
+                <div><label>Alternate Mobile Number</label></div>
+                <div><input type="number" name="num1111" id="num1111" /></div>
+              </div>
+            </div>
+            <br />
+            <div class="otd">
+              <h2 class="cd">Other Details</h2>
+              <div class="flex-container">
+                <div style="display: block" class="pfile">
+                  <div>
+                    <label>Profile picture</label
+                    ><span style="color: red">*</span>
+                  </div>
+                  <br />
+                  <div class="form-container">
+                    <input type="file" name="picture111" id="picture111" /><br />
+   
+                    <small>Error</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="dotd">
+              <h2 class="cd">Other Details</h2>
+              <div class="flex-container">
+                <div style="display: block" class="mnon">
+                  <div>
+                    <label>Doctor ID</label><span style="color: red">*</span>
+                  </div>
+                  <div class="form-container">
+                    <input type="text" id="doc1111" /><br />
+                    <i class="fas fa-exclamation-circle"></i>
+                    <i class="fas fa-check-circle"></i>
+                    <small>Error</small>
+                  </div>
+                </div>
+                <div style="display: block" class="amnon">
+                  <div>
+                    <label>Speciality</label><span style="color: red">*</span>
+                  </div>
+                  <div class="form-container">
+                    <input type="text" id="spc111" /><br />
+                    <i class="fas fa-exclamation-circle"></i>
+                    <i class="fas fa-check-circle"></i>
+                    <small>Error</small>
+                  </div>
+                </div>
+              </div>
+              <div class="flex-container" style="margin-top: 10px">
+                <div style="display: block" class="mnon1">
+                  <div>
+                    <label>License No</label><span style="color: red">*</span>
+                  </div>
+                  <div class="form-container">
+                    <input type="text" id="lno111" /><br />
+                    <i class="fas fa-exclamation-circle"></i>
+                    <i class="fas fa-check-circle"></i>
+                    <small>Error</small>
+                  </div>
+                </div>
+                <div style="display: block" id="amnon1">
+                  <div><label>WCB License No</label></div>
+                  <div><input type="text" id="num2222" /></div>
+                </div>
+              </div>
+              <div class="flex-container" style="margin-top: 10px">
+                <div style="display: block" class="code1">
+                  <div>
+                    <label>Digital Signature</label
+                    ><span style="color: red">*</span>
+                  </div>
+                  <div class="form-container">
+                    <input type="file" id="dsign111" /><br />
+  
+                    <small>Error</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="su">
+              <button name="sub111" id="sub111">Submit</button>
+            </div>
+          </div>
+    
+      </div>
+      
+      <div class="drr" style="z-index: 1">
+      
+          <div style="display: block">
+            <div class="flex-container">
+              <div style="display: block" class="first">
+                <div>
+                  <label>First Name</label><span style="color: red">*</span>
+                </div>
+                <div class="form-container">
+                  <input type="text" name="fname112" id="fname112" /><br />
+                  <i class="fas fa-exclamation-circle"></i>
+                  <i class="fas fa-check-circle"></i>
+                  <small>Error</small>
+                </div>
+              </div>
+              <div style="display: block" class="second">
+                <div>
+                  <label>Initial Name</label><span style="color: red">*</span>
+                </div>
+                <div class="form-container">
+                  <input type="text" name="sname112" id="sname112" /><br />
+                  <i class="fas fa-exclamation-circle"></i>
+                  <i class="fas fa-check-circle"></i>
+                  <small>Error</small>
+                </div>
+              </div>
+            </div>
+            <br />
+            <div class="flex-container">
+              <div style="display: block" class="address1">
+                <div>
+                  <label>Address Line1</label><span style="color: red">*</span>
+                </div>
+                <div class="form-container">
+                  <input type="text" name="line1112" id="line1112" /><br />
+                  <i class="fas fa-exclamation-circle"></i>
+                  <i class="fas fa-check-circle"></i>
+                  <small>Error</small>
+                </div>
+              </div>
+              <div style="display: block" class="address2">
+                <div>
+                  <label>Address Line2</label><span style="color: red">*</span>
+                </div>
+                <div class="form-container">
+                  <input type="text" name="line2223" id="line2223" /><br />
+                  <i class="fas fa-exclamation-circle"></i>
+                  <i class="fas fa-check-circle"></i>
+                  <small>Error</small>
+                </div>
+              </div>
+            </div>
+            <br />
+  
+            <div class="flex-container">
+              <div style="display: block" class="address3">
+                <div><label>Address Line3</label></div>
+                <div><input type="text" name="line3334" id="line3334" /></div>
+              </div>
+              <div style="display: block" class="address4">
+                <div><label>Address Line4</label></div>
+                <div><input type="text" name="line4445" id="line4445" /></div>
+              </div>
+            </div>
+            <br />
+            <div class="flex-container">
+              <div style="display: block" class="code">
+                <div><label>Zipcode</label><span style="color: red">*</span></div>
+                <div class="form-container">
+                  <input type="text" name="zcode112" id="zcode112" /><br/>
+                  <i class="fas fa-exclamation-circle"></i>
+                  <i class="fas fa-check-circle"></i>
+                  <small>Error</small>
+                </div>
+              </div>
+            </div>
+            <br />
+            <h2 class="cd">Contact Details</h2>
+  
+            <div class="flex-container">
+              <div style="display: block" class="email">
+                <div><label>EmailId</label><span style="color: red">*</span></div>
+                <div class="form-container">
+                  <input type="email" name="mail112" id="mail112" /><br />
+                  <i class="fas fa-exclamation-circle"></i>
+                  <i class="fas fa-check-circle"></i>
+                  <small>Error</small>
+                </div>
+              </div>
+              <div style="display: block" class="aemail">
+                <div><label>Alternate Email</label></div>
+                <div><input type="email" name="amail112" id="amail112" /></div>
+              </div>
+            </div>
+            <br />
+            <div class="flex-container">
+              <div style="display: block" class="mno">
+                <div>
+                  <label>Mobile No</label><span style="color: red">*</span>
+                </div>
+                <div class="form-container">
+                  <input type="number" name="num122" id="num122" /><br />
+                  <i class="fas fa-exclamation-circle"></i>
+                  <i class="fas fa-check-circle"></i>
+                  <small>Error</small>
+                </div>
+              </div>
+              <div style="display: block" class="amno">
+                <div><label>Alternate Mobile Number</label></div>
+                <div><input type="number" name="num1112" id="num1112" /></div>
+              </div>
+            </div>
+            <br />
+            <div class="otd">
+              <h2 class="cd">Other Details</h2>
+              <div class="flex-container">
+                <div style="display: block" class="pfile">
+                  <div>
+                    <label>Profile picture</label
+                    ><span style="color: red">*</span>
+                  </div>
+                  <br />
+                  <div class="form-container">
+                    <input type="file" id="picture112" /><br />
+  
+                    <small>Error</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="dotd">
+              <h2 class="cd">Other Details</h2>
+              <div class="flex-container">
+                <div style="display: block" class="mnon">
+                  <div>
+                    <label>Doctor ID</label><span style="color: red">*</span>
+                  </div>
+                  <div class="form-container">
+                    <input type="text" name="doc1112" id="doc1112" /><br />
+                    <i class="fas fa-exclamation-circle"></i>
+                    <i class="fas fa-check-circle"></i>
+                    <small>Error</small>
+                  </div>
+                </div>
+                <div style="display: block" class="amnon">
+                  <div>
+                    <label>Speciality</label><span style="color: red">*</span>
+                  </div>
+                  <div class="form-container">
+                    <input type="text" name="spc112" id="spc112" /><br />
+                    <i class="fas fa-exclamation-circle"></i>
+                    <i class="fas fa-check-circle"></i>
+                    <small>Error</small>
+                  </div>
+                </div>
+              </div>
+              <div class="flex-container" style="margin-top: 10px">
+                <div style="display: block" class="mnon1">
+                  <div>
+                    <label>License No</label><span style="color: red">*</span>
+                  </div>
+                  <div class="form-container">
+                    <input type="text" name="lno112" id="lno112" /><br />
+                    <i class="fas fa-exclamation-circle"></i>
+                    <i class="fas fa-check-circle"></i>
+                    <small>Error</small>
+                  </div>
+                </div>
+                <div style="display: block" class="amnon1">
+                  <div><label>WCB License No</label></div>
+                  <div><input type="text" name="num2223" id="num2223" /></div>
+                </div>
+              </div>
+              <div class="flex-container" style="margin-top: 10px">
+                <div style="display: block" class="code1">
+                  <div>
+                    <label>Digital Signature</label
+                    ><span style="color: red">*</span>
+                  </div>
+                  <div class="form-container">
+                    <input type="file" name="dsign112" id="dsign112" /><br />
+  
+                    <small>Error</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="su">
+              <button name="sub112" id="sub112">Submit</button>
+            </div>
+          </div>
+       
+      </div>
+    </form>
+</div>
+      <br />
+  
+  
+
+    
+    <div id="n1">
+      <div id="n2">
+        <form action="">
+          <h2 style="margin-left: 30%">Case</h2>
+          <table>
+            <tr>
+              <th id="m">ID</th>
+              <th id="m">Name</th>
+              <th id="m">ShowingName</th>
+              <th id="m">Action</th>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </table>
+        </form>
+      </div>
+
+      <div id="n3">
+        <form action="">
+          <table>
+            <h2 style="text-align: center">Company</h2>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>ShowingName</th>
+              <th>AddressLine1</th>
+              <th>AddressLine2</th>
+              <th>AddressLine3</th>
+              <th>AddressLine4</th>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </table>
+        </form>
+      </div>
+      <div id="n4">
+        <form action="">
+          <table>
+            <h2 style="text-align: center">Location</h2>
+            <tr>
+              <th id="m2">ID</th>
+              <th id="m2">Name</th>
+              <th id="m2">ShowingName</th>
+              <th>AddressLine1</th>
+              <th id="m2">AddressLine2</th>
+              <th id="m2">AddressLine3</th>
+              <th id="m2">AddressLine4</th>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </table>
+        </form>
+      </div>
+    </div>
+    <div id="n6">
+      <div id="n5">
+        <form action="">
+          <h2 id="n7">Admin</h2>
+          <table>
+            <tr>
+              <th>Name</th>
+              <th>Addressline1</th>
+              <th>Addressline2</th>
+              <th>Zipcode</th>
+              <th>Mobile NO</th>
+              <th>Email</th>
+             
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </table>
+        </form>
+      </div>
+      </div>
+      <div id="m6">
+        <div id="m5">
+          <form action="">
+            <h2 id="m7">scheduler</h2>
+            <table>
+              <tr>
+                <th>Name</th>
+                <th>Addressline1</th>
+                <th>Addressline2</th>
+                <th>Zipcode</th>
+                <th>Mobile NO</th>
+                <th>Email</th>
+               
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </table>
+          </form>
+        </div>
+        </div>
+        <div id="o6">
+          <div id="o5">
+            <form action="">
+              <h2 id="o7">Front Desk</h2>
+              <table>
+                <tr>
+                  <th>Name</th>
+                  <th>Addressline1</th>
+                  <th>Addressline2</th>
+                  <th>Zipcode</th>
+                  <th>Mobile NO</th>
+                  <th>Email</th>
+                 
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </table>
+            </form>
+          </div>
+          </div>
+          <div id="p6">
+            <div id="p5">
+              <form action="">
+                <h2 id="p7">Doctor Assistant</h2>
+                <table>
+                  <tr>
+                    <th>Name</th>
+                    <th>Addressline1</th>
+                    <th>Addressline2</th>
+                    <th>Zipcode</th>
+                    <th>Mobile NO</th>
+                    <th>Email</th>
+                   
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </table>
+              </form>
+            </div>
+            </div>
+            <div id="q6">
+              <div id="q5">
+                <form action="">
+                  <h2 id="q7">Doctor</h2>
+                  <table>
+                    <tr>
+                      <th>Name</th>
+                      <th>Addressline1</th>
+                      <th>Addressline2</th>
+                      <th>Zipcode</th>
+                      <th>Mobile NO</th>
+                      <th>Email</th>
+                      <th>Doctor ID</th>
+                      <th>Speciality</th>
+                      <th>License NO</th>
+                     
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </table>
+                </form>
+              </div>
+              </div>
+                    
+
+    <script>
+      function opentab(tabmenu) {
+        var i;
+        var x = document.getElementsByClassName("tab");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        document.getElementById(tabmenu).style.display = "block";
+      }
+      $("document").ready(function () {
+        $("#bar").click(function () {
+          $(".sidebar").toggle();
+        });
+      });
+      $("document").ready(function () {
+        $("#list").click(function () {
+          $(".a").show();
+          $(".sc").hide();
+          $(".fr").hide();
+          $(".da").hide();
+          $(".drr").hide();
+          $(".dotd").hide();
+           $(".otd").show();
+           $("#n1").hide();
+           $("#n6").hide();
+           $("#m6").hide();
+          $("#o6").hide();
+          $("#p6").hide();
+          $("#q6").hide();
+          $(".otd").show();
+        });
+      });
+      $("document").ready(function () {
+        $("#list1").click(function () {
+          $(".sc").show();
+          $(".dotd").hide();
+          $(".a").hide();
+          $(".da").hide();
+          $(".drr").hide();
+          $(".fr").hide();
+          $(".otd").show();
+        //  $("#n1").hide();
+        });
+      });
+      $("document").ready(function () {
+        $("#list2").click(function () {
+          $(".fr").show();
+          $(".a").hide();
+          $(".sc").hide();
+          $(".drr").hide();
+          $(".da").hide();
+          $(".dotd").hide();
+          $(".otd").show();
+          // $("#n1").hide();
+        });
+      });
+      $("document").ready(function () {
+        $("#list3").click(function () {
+          $(".da").show();
+          $(".a").hide();
+          $(".sc").hide();
+          $(".fr").hide();
+          $(".drr").hide();
+          $(".dotd").hide();
+        //   $(".otd").show();
+           $("#n1").hide();
+           $("#n6").hide();
+           $("#m6").hide();
+          $("#o6").hide();
+          $("#p6").hide();
+          $("#q6").hide();
+          $(".otd").show();
+        });
+      });
+      $("document").ready(function () {
+        $("#doc").click(function () {
+          $(".drr").show();
+          $(".dotd").show();
+          $(".a").hide();
+          $(".sc").hide();
+          $(".fr").hide();
+          $(".da").hide();
+           $(".otd").hide();
+         $("#n1").hide();
+         $("#n6").hide();
+           $("#m6").hide();
+          $("#o6").hide();
+          $("#p6").hide();
+          $("#q6").hide();
+        });
+       });
+      $("document").ready(function () {
+        $("#n").click(function () {
+          $("#n2").toggle();
+          $("#n1").show();
+          $(".a").hide();
+          $(".sc").hide();
+          $(".fr").hide();
+          $(".da").hide();
+          $(".drr").hide();
+          $("#n3").hide();
+          $("#n4").hide();
+          $("#n6").hide();
+        
+           $("#m6").hide();
+          $("#o6").hide();
+          $("#p6").hide();
+          $("#q6").hide();
+        });
+      });
+      $("document").ready(function () {
+        $("#n12").click(function () {
+          $("#n3").toggle();
+          $("#n1").show();
+          $(".a").hide();
+          $(".sc").hide();
+          $(".fr").hide();
+          $(".da").hide();
+          $(".drr").hide();
+          $("#n2").hide();
+          $("#n4").hide();
+          $("#n6").hide();
+         
+           $("#m6").hide();
+          $("#o6").hide();
+          $("#p6").hide();
+          $("#q6").hide();
+        });
+      });
+      $("document").ready(function () {
+        $("#n13").click(function () {
+          $("#n4").toggle();
+          $("#n1").show();
+          $(".a").hide();
+          $(".sc").hide();
+          $(".fr").hide();
+          $(".da").hide();
+          $(".drr").hide();
+          $("#n3").hide();
+          $("#n2").hide();
+          $("#n6").hide();
+         
+           $("#m6").hide();
+          $("#o6").hide();
+          $("#p6").hide();
+          $("#q6").hide();
+        });
+      });
+      $("document").ready(function () {
+        $("#list44").click(function () {
+          $("#n6").toggle();
+          $("#n5").show();
+          $("#n1").hide();
+          $(".a").hide();
+          $(".sc").hide();
+          $(".fr").hide();
+          $(".da").hide();
+          $(".drr").hide();
+          $("#n3").hide();
+          $("#n2").hide();
+          $("#m6").hide();
+          $("#o6").hide();
+          $("#p6").hide();
+          $("#q6").hide();
+        });
+      });
+      $("document").ready(function () {
+        $("#list45").click(function () {
+          $("#m6").toggle();
+          $("#n5").show();
+          $("#n1").hide();
+          $(".a").hide();
+          $(".sc").hide();
+          $(".fr").hide();
+          $(".da").hide();
+          $(".drr").hide();
+          $("#n3").hide();
+          $("#n2").hide();
+          $("#n6").hide();
+          $("#o6").hide();
+          $("#q6").hide();
+          $("#p6").hide();
+        });
+      });
+      $("document").ready(function () {
+        $("#list46").click(function () {
+          $("#o6").toggle();
+          $("#n5").show();
+          $("#n1").hide();
+          $(".a").hide();
+          $(".sc").hide();
+          $(".fr").hide();
+          $(".da").hide();
+          $(".drr").hide();
+          $("#n3").hide();
+          $("#n2").hide();
+          $("#n6").hide();
+          $("#m6").hide();
+          $("#q6").hide();
+          $("#p6").hide();
+        });
+      });
+      $("document").ready(function () {
+        $("#list47").click(function () {
+          $("#p6").toggle();
+          $("#n5").show();
+          $("#n1").hide();
+          $(".a").hide();
+          $(".sc").hide();
+          $(".fr").hide();
+          $(".da").hide();
+          $(".drr").hide();
+          $("#n3").hide();
+          $("#n2").hide();
+          $("#n6").hide();
+          $("#m6").hide();
+          $("#o6").hide();
+          $("#q6").hide();
+          
+        });
+      });
+      $("document").ready(function () {
+        $("#list48").click(function () {
+          $("#q6").toggle();
+          $("#n5").show();
+          $("#n1").hide();
+          $(".a").hide();
+          $(".sc").hide();
+          $(".fr").hide();
+          $(".da").hide();
+          $(".drr").hide();
+          $("#n3").hide();
+          $("#n2").hide();
+          $("#n6").hide();
+          $("#m6").hide();
+          $("#o6").hide();
+          $("#p6").hide();
+          
+        });
+      });
+
+      const fsname = document.querySelector("#fname");
+      const ssname = document.querySelector("#sname");
+      const adl1 = document.querySelector("#line1");
+      const adl2 = document.querySelector("#line2");
+      const zpcode = document.querySelector("#zcode");
+      const nemail = document.querySelector("#mail");
+      const phn = document.querySelector("#num");
+      const prpic = document.querySelector("#picture");
+      const doct = document.querySelector("#doc1");
+      const spec = document.querySelector("#spc");
+      const licno = document.querySelector("#lno");
+      const digital = document.querySelector("#dsign");
+      const submit = document.querySelector("#sub");
+      submit.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (fsname.value.trim() === "") {
+          error(fsname, "username cannot be empty");
+        } else {
+          success(fsname);
+        }
+        if (ssname.value.trim() === "") {
+          error(ssname, "password cannot be empty");
+        } else {
+          success(ssname);
+        }
+        if (adl1.value.trim() === "") {
+          error(adl1, "address1 cannot be empty");
+        } else {
+          success(adl1);
+        }
+        if (adl2.value.trim() === "") {
+          error(adl2, "address cannot be empty");
+        } else {
+          success(adl2);
+        }
+        if (zpcode.value.trim() === "") {
+          error(zpcode, "Zipcode cannot be empty");
+        } else {
+          success(zpcode);
+        }
+        if (nemail.value.trim() === "") {
+          error(nemail, "email cannot be empty");
+        } else if (!isEmail(nemail.value.trim())) {
+          error(nemail, "provide valid Email ID");
+        } else {
+          success(nemail);
+        }
+        if (phn.value.trim() === "") {
+          error(phn, "mobile number cannot be empty");
+        } else if (phn.value.length < 10 || phn.value.length > 15) {
+          error(phn, "Mobile No Min10 & Max15");
+        } else {
+          success(phn);
+        }
+        if (prpic.value.trim() === "") {
+          error(prpic, "profile picture cannot be empty");
+        } else {
+          success(prpic);
+        }
+        if (doct.value.trim() === "") {
+          error(doct, "DoctorID cannot be empty");
+        } else {
+          success(doct);
+        }
+        if (spec.value.trim() === "") {
+          error(spec, "speciality cannot be empty");
+        } else {
+          success(spec);
+        }
+        if (licno.value.trim() === "") {
+          error(licno, "license no cannot be empty");
+        } else {
+          success(licno);
+        }
+        if (digital.value.trim() === "") {
+          error(digital, "digital Sign cannot be empty");
+        } else {
+          success(digital);
+        }
+      });
+      function error(element, msg) {
+        element.style.border = "1px solid red";
+        const parent = element.parentElement;
+        const small = parent.querySelector("small");
+        parent.className = "form-container error";
+        small.innerText = msg;
+      }
+      function success(element) {
+        element.style.border = "1px solid green";
+        const parent = element.parentElement;
+        parent.className = "form-container success";
+      }
+      function isEmail(nemail) {
+        return /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(
+          nemail
+        );
+      }
+      const fsname1 = document.querySelector("#fname1");
+      const ssname1 = document.querySelector("#sname1");
+      const adl11 = document.querySelector("#line11");
+      const adl21 = document.querySelector("#line22");
+      const zpcode1 = document.querySelector("#zcode1");
+      const nemail1 = document.querySelector("#mail1");
+      const phn1 = document.querySelector("#num10");
+      const prpic1 = document.querySelector("#picture1");
+      const doct1 = document.querySelector("#doc11");
+      const spec1 = document.querySelector("#spc1");
+      const licno1 = document.querySelector("#lno1");
+      const digital1 = document.querySelector("#dsign1");
+      const submit1 = document.querySelector("#sub1");
+      submit1.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (fsname1.value.trim() === "") {
+          error(fsname1, "username cannot be empty");
+        } else {
+          success(fsname1);
+        }
+        if (ssname1.value.trim() === "") {
+          error(ssname1, "password cannot be empty");
+        } else {
+          success(ssname1);
+        }
+        if (adl11.value.trim() === "") {
+          error(adl11, "address1 cannot be empty");
+        } else {
+          success(adl11);
+        }
+        if (adl21.value.trim() === "") {
+          error(adl21, "address cannot be empty");
+        } else {
+          success(adl21);
+        }
+        if (zpcode1.value.trim() === "") {
+          error(zpcode1, "Zipcode cannot be empty");
+        } else {
+          success(zpcode1);
+        }
+        if (nemail1.value.trim() === "") {
+          error(nemail1, "email cannot be empty");
+        } else if (!isEmail(nemail1.value.trim())) {
+          error(nemail1, "provide valid Email ID");
+        } else {
+          success(nemail1);
+        }
+        if (phn1.value.trim() === "") {
+          error(phn1, "mobile number cannot be empty");
+        } else if (phn1.value.length < 10 || phn1.value.length > 15) {
+          error(phn1, "Mobile No Min10 & Max15");
+        } else {
+          success(phn1);
+        }
+        if (prpic1.value.trim() === "") {
+          error(prpic1, "profile picture cannot be empty");
+        } else {
+          success(prpic1);
+        }
+        if (doct1.value.trim() === "") {
+          error(doct1, "DoctorID cannot be empty");
+        } else {
+          success(doct1);
+        }
+        if (spec1.value.trim() === "") {
+          error(spec1, "speciality cannot be empty");
+        } else {
+          success(spec1);
+        }
+        if (licno1.value.trim() === "") {
+          error(licno1, "license no cannot be empty");
+        } else {
+          success(licno1);
+        }
+        if (digital1.value.trim() === "") {
+          error(digital1, "digital Sign cannot be empty");
+        } else {
+          success(digital1);
+        }
+      });
+      function error(element, msg) {
+        element.style.border = "1px solid red";
+        const parent = element.parentElement;
+        const small = parent.querySelector("small");
+        parent.className = "form-container error";
+        small.innerText = msg;
+      }
+      function success(element) {
+        element.style.border = "1px solid green";
+        const parent = element.parentElement;
+        parent.className = "form-container success";
+      }
+     
+      function isEmail(nemail1) {
+        return /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(
+          nemail1
+        );
+      }
+      const fsname11 = document.querySelector("#fname11");
+      const ssname11 = document.querySelector("#sname11");
+      const adl211 = document.querySelector("#line111");
+      const adl22 = document.querySelector("#line222");
+      const zpcode11 = document.querySelector("#zcode11");
+      const nemail11 = document.querySelector("#mail11");
+      const phn11 = document.querySelector("#num12");
+      const prpic11 = document.querySelector("#picture11");
+      const doct11 = document.querySelector("#doc111");
+      const spec11 = document.querySelector("#spc11");
+      const licno11 = document.querySelector("#lno11");
+      const digital11 = document.querySelector("#dsign11");
+      const submit11 = document.querySelector("#sub11");
+      submit11.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (fsname11.value.trim() === "") {
+          error(fsname11, "username cannot be empty");
+        } else {
+          success(fsname11);
+        }
+        if (ssname11.value.trim() === "") {
+          error(ssname11, "password cannot be empty");
+        } else {
+          success(ssname11);
+        }
+        if (adl211.value.trim() === "") {
+          error(adl211, "address1 cannot be empty");
+        } else {
+          success(adl211);
+        }
+        if (adl22.value.trim() === "") {
+          error(adl22, "address cannot be empty");
+        } else {
+          success(adl22);
+        }
+        if (zpcode11.value.trim() === "") {
+          error(zpcode11, "Zipcode cannot be empty");
+        } else {
+          success(zpcode11);
+        }
+        if (nemail11.value.trim() === "") {
+          error(nemail11, "email cannot be empty");
+        } else if (!isEmail(nemail11.value.trim())) {
+          error(nemail11, "provide valid Email ID");
+        } else {
+          success(nemail11);
+        }
+        if (phn11.value.trim() === "") {
+          error(phn1, "mobile number cannot be empty");
+        } else if (phn11.value.length < 10 || phn11.value.length > 15) {
+          error(phn11, "Mobile No Min10 & Max15");
+        } else {
+          success(phn11);
+        }
+        if (prpic11.value.trim() === "") {
+          error(prpic11, "profile picture cannot be empty");
+        } else {
+          success(prpic11);
+        }
+        if (doct11.value.trim() === "") {
+          error(doct11, "DoctorID cannot be empty");
+        } else {
+          success(doct11);
+        }
+        if (spec11.value.trim() === "") {
+          error(spec11, "speciality cannot be empty");
+        } else {
+          success(spec11);
+        }
+        if (licno11.value.trim() === "") {
+          error(licno11, "license no cannot be empty");
+        } else {
+          success(licno11);
+        }
+        if (digital11.value.trim() === "") {
+          error(digital11, "digital Sign cannot be empty");
+        } else {
+          success(digital11);
+        }
+      });
+      function error(element, msg) {
+        element.style.border = "1px solid red";
+        const parent = element.parentElement;
+        const small = parent.querySelector("small");
+        parent.className = "form-container error";
+        small.innerText = msg;
+      }
+      function success(element) {
+        element.style.border = "1px solid green";
+        const parent = element.parentElement;
+        parent.className = "form-container success";
+      }
+      function isEmail(nemail11) {
+        return /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(
+          nemail11
+        );
+      }
+      const fsname111 = document.querySelector("#fname111");
+      const ssname111 = document.querySelector("#sname111");
+      const adl212 = document.querySelector("#line1111");
+      const adl23 = document.querySelector("#line2222");
+      const zpcode12 = document.querySelector("#zcode111");
+      const nemail12 = document.querySelector("#mail111");
+      const phn12 = document.querySelector("#num121");
+      const prpic12 = document.querySelector("#picture111");
+      const doct12 = document.querySelector("#doc1111");
+      const spec12 = document.querySelector("#spc111");
+      const licno12 = document.querySelector("#lno111");
+      const digital12 = document.querySelector("#dsign111");
+      const submit12 = document.querySelector("#sub111");
+      submit12.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (fsname111.value.trim() === "") {
+          error(fsname111, "username cannot be empty");
+        } else {
+          success(fsname111);
+        }
+        if (ssname111.value.trim() === "") {
+          error(ssname111, "password cannot be empty");
+        } else {
+          success(ssname111);
+        }
+        if (adl212.value.trim() === "") {
+          error(adl212, "address1 cannot be empty");
+        } else {
+          success(adl212);
+        }
+        if (adl23.value.trim() === "") {
+          error(adl23, "address cannot be empty");
+        } else {
+          success(adl23);
+        }
+        if (zpcode12.value.trim() === "") {
+          error(zpcode12, "Zipcode cannot be empty");
+        } else {
+          success(zpcode12);
+        }
+        if (nemail12.value.trim() === "") {
+          error(nemail12, "email cannot be empty");
+        } else if (!isEmail(nemail12.value.trim())) {
+          error(nemail12, "provide valid Email ID");
+        } else {
+          success(nemail12);
+        }
+        if (phn12.value.trim() === "") {
+          error(phn12, "mobile number cannot be empty");
+        } else if (phn12.value.length < 10 || phn12.value.length > 15) {
+          error(phn12, "Mobile No Min10 & Max15");
+        } else {
+          success(phn12);
+        }
+        if (prpic12.value.trim() === "") {
+          error(prpic12, "profile picture cannot be empty");
+        } else {
+          success(prpic12);
+        }
+        if (doct12.value.trim() === "") {
+          error(doct12, "DoctorID cannot be empty");
+        } else {
+          success(doct12);
+        }
+        if (spec12.value.trim() === "") {
+          error(spec12, "speciality cannot be empty");
+        } else {
+          success(spec12);
+        }
+        if (licno12.value.trim() === "") {
+          error(licno12, "license no cannot be empty");
+        } else {
+          success(licno12);
+        }
+        if (digital12.value.trim() === "") {
+          error(digital12, "digital Sign cannot be empty");
+        } else {
+          success(digital12);
+        }
+      });
+      function error(element, msg) {
+        element.style.border = "1px solid red";
+        const parent = element.parentElement;
+        const small = parent.querySelector("small");
+        parent.className = "form-container error";
+        small.innerText = msg;
+      }
+      function success(element) {
+        element.style.border = "1px solid green";
+        const parent = element.parentElement;
+        parent.className = "form-container success";
+      }
+      function isEmail(nemail12) {
+        return /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(
+          nemail12
+        );
+      }
+      const fsname112 = document.querySelector("#fname112");
+      const ssname112 = document.querySelector("#sname112");
+      const adl213 = document.querySelector("#line1112");
+      const adl24 = document.querySelector("#line2223");
+      const zpcode13 = document.querySelector("#zcode112");
+      const nemail13 = document.querySelector("#mail112");
+      const phn13 = document.querySelector("#num122");
+      const prpic13 = document.querySelector("#picture112");
+      const doct13 = document.querySelector("#doc1112");
+      const spec13 = document.querySelector("#spc112");
+      const licno13 = document.querySelector("#lno112");
+      const digital13 = document.querySelector("#dsign112");
+      const submit13 = document.querySelector("#sub112");
+      submit13.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (fsname112.value.trim() === "") {
+          error(fsname112, "username cannot be empty");
+        } else {
+          success(fsname112);
+        }
+        if (ssname112.value.trim() === "") {
+          error(ssname112, "password cannot be empty");
+        } else {
+          success(ssname112);
+        }
+        if (adl213.value.trim() === "") {
+          error(adl213, "address1 cannot be empty");
+        } else {
+          success(adl213);
+        }
+        if (adl24.value.trim() === "") {
+          error(adl24, "address cannot be empty");
+        } else {
+          success(adl24);
+        }
+        if (zpcode13.value.trim() === "") {
+          error(zpcode13, "Zipcode cannot be empty");
+        } else {
+          success(zpcode13);
+        }
+        if (nemail13.value.trim() === "") {
+          error(nemail13, "email cannot be empty");
+        } else if (!isEmail(nemail13.value.trim())) {
+          error(nemail13, "provide valid Email ID");
+        } else {
+          success(nemail13);
+        }
+        if (phn13.value.trim() === "") {
+          error(phn13, "mobile number cannot be empty");
+        } else if (phn13.value.length < 10 || phn13.value.length > 15) {
+          error(phn13, "Mobile No Min10 & Max15");
+        } else {
+          success(phn13);
+        }
+        if (prpic13.value.trim() === "") {
+          error(prpic13, "profile picture cannot be empty");
+        } else {
+          success(prpic13);
+        }
+        if (doct13.value.trim() === "") {
+          error(doct13, "DoctorID cannot be empty");
+        } else {
+          success(doct13);
+        }
+        if (spec13.value.trim() === "") {
+          error(spec13, "speciality cannot be empty");
+        } else {
+          success(spec13);
+        }
+        if (licno13.value.trim() === "") {
+          error(licno13, "license no cannot be empty");
+        } else {
+          success(licno13);
+        }
+        if (digital13.value.trim() === "") {
+          error(digital13, "digital Sign cannot be empty");
+        } else {
+          success(digital13);
+        }
+      });
+      function error(element, msg) {
+        element.style.border = "1px solid red";
+        const parent = element.parentElement;
+        const small = parent.querySelector("small");
+        parent.className = "form-container error";
+        small.innerText = msg;
+      }
+      function success(element) {
+        element.style.border = "1px solid green";
+        const parent = element.parentElement;
+        parent.className = "form-container success";
+      }
+      function isEmail(nemail13) {
+        return /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(
+          nemail13
+        );
+      }
+      var element = document.getElementsByClassName("list-unstyled")[0];
+      element.addEventListener("click", myFunction);
+      function myFunction(e) {
+		  var elems = document.querySelector(".active");
+      if(elems !=null) {
+      elems.classList.remove("active");
+       }
+       e.target.className = "active";
+	     }
+       $("#createuse").on('click','li',function(){
+        $(this).addClass("active");
+       });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+      integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <style>
+      .sidebar {
+        background-color: grey;
+        width: 200px;
+        height: 100vh;
+        padding-top: 10px;
+      }
+      .sidebar .menu {
+        width: 100%;
+      }
+      .sidebar .menu .item {
+        position: relative;
+      }
+
+      .sidebar .menu .item a {
+        color: white;
+
+        text-decoration: none;
+        display: block;
+        padding: 5px 30px;
+        line-height: 50px;
+      }
+      .sidebar .menu .item a:hover {
+        background-color: turquoise;
+        transition: 0.3s ease out;
+      }
+      .sidebar .menu .item i {
+        margin-right: 15px;
+      }
+      .sidebar .menu .item a .dropdown {
+        position: absolute;
+        right: 0;
+
+         margin: 20px;
+        /* padding-left: 25px; */ 
+      }
+      .sidebar .menu .item .sub-menu {
+        background-color: orangered;
+      }
+      .sidebar .menu .item .sub-menu a {
+        padding-left: 80px;
+      }
+      .sub-menu {
+        display: none;
+      }
+      .sub-menu a.bgg {
+        background-color: turquoise;
+        color: red;
+      }
+      /* .bgg{
+        color:black;
+      } */
+
+      .rotate {
+        transform: rotate(90deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="menu">
+        <div class="item">
+          <a href=""><i class="fas fa-desktop"></i>Dashboard</a>
+        </div>
+        <div class="item">
+          <a class="sub-btn" href="#"
+            ><i class="fas fa-desktop"></i>Dropdown<i
+              class="fas fa-angle-right dropdown"
+            ></i>
+          </a>
+          <div class="sub-menu">
+            <a href="#" class="sub-item">sub item1</a>
+
+            <a href="#" class="sub-item">sub item2</a>
+            <a href="#" class="sub-item">sub item3</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      $("document").ready(function () {
+        $(".sub-btn").click(function () {
+          $(".sub-menu").slideToggle();
+          $(".dropdown").toggleClass("rotate");
+          $(".sub-menu a.bgg").removeClass("bgg");
+        });
+      });
+      $(".sub-menu a").on("click", function () {
+        $(".sub-menu a.bgg").removeClass("bgg");
+        $(this).addClass("bgg");
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+<div class="mb-3 col-12">
+                    <div class="form-file">
+                        <input type="file" class="form-file-input" id="CustomFile" />
+
+                        <label class="form-file-label" for="CustomFile">
+                            <span class="form-file-text">Choose file</span>
+
+                            <span class="form-file-button">Browse</span>
+                        </label>
+                    </div>
+                </div>

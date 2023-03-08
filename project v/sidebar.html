@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+      integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <style>
+      .sidebar {
+        position: fixed;
+        height: 100%;
+        /* background-image: linear-gradient(to bottom right,turquoise,white); */
+        background-color: grey;
+
+        margin-top: 50px;
+        left: 0;
+        width: 200px;
+      }
+      .b .sidebar ul li a {
+        display: block;
+      }
+
+      .header {
+        background-color: rgb(8, 8, 75);
+        position: fixed;
+        width: 100%;
+        height: 50px;
+        /* border-bottom: rgb(153, 148, 148); */
+      }
+      /* .nav{
+        text-align: right;
+      } */
+
+      .a {
+        padding: 60px;
+        margin-left: 130px;
+        display: none;
+      }
+      .c,
+      .d {
+        display: none;
+      }
+      ul li {
+        list-style-type: none;
+      }
+      .flex-container {
+        display: flex;
+        margin-left: 5%;
+      }
+      #first,
+      #second,
+      #address1,
+      #address2,
+      #address3,
+      #address4,
+      #code,
+      #email,
+      #aemail,
+      #mno,
+      #amno,
+      #pfile,
+      #mnon,
+      #amnon,
+      #mnon1,
+      #amnon1,
+      #code1 {
+        flex: 50%;
+      }
+      select {
+        border-radius: 5px;
+        height: 30psx;
+      }
+
+      #fname,
+      #sname,
+      #line1,
+      #line2,
+      #line3,
+      #line4,
+      #mail,
+      #amail,
+      #num,
+      #num2,
+      #lno,
+      #spc,
+      #doc1 {
+        width: 90%;
+        height: 25px;
+        border-radius: 5px;
+        border: 1px solid black;
+      }
+      #zcode,
+      #dsign,
+      #picture {
+        width: 45%;
+        height: 25px;
+        border-radius: 5px;
+        border: 1px solid black;
+      }
+
+      input[type="file"] {
+        font-size: 17px;
+      }
+      #cd {
+        text-align: center;
+      }
+
+      #login ul li :hover {
+        background-color: white;
+        color: black;
+      }
+
+      ul li a {
+        text-decoration: none;
+        border-bottom: darkgreen;
+        color: black;
+      }
+      ul li a:hover {
+        text-decoration: none;
+
+        color: white;
+        transition: 0.3s ease-out;
+      }
+
+      #bar {
+        display: none;
+      }
+      #dotd {
+        display: none;
+      }
+      li {
+        margin-bottom: 10px;
+      }
+      #sub {
+        margin-top: 30px;
+        width: 150px;
+        background-color: rgb(8, 8, 75);
+        border: none;
+        border-radius: 5px;
+        color: aliceblue;
+        box-shadow: inset 0 0 0 0 grey;
+        transition: 0.3s ease-out;
+      }
+      #sub:hover {
+        box-shadow: inset 150px 0 0 grey;
+        transition: 0.3s ease-out;
+        color: black;
+      }
+      #su {
+        display: flex;
+        justify-content: center;
+      }
+      .form-container i {
+        position: absolute;
+        margin-left: 35%;
+        margin-top: -20px;
+        visibility: hidden;
+      }
+      .form-container.error i.fa-exclamation-circle {
+        color: red;
+        visibility: visible;
+      }
+      .form-container.success i.fa-check-circle {
+        color: green;
+        visibility: visible;
+      }
+      .form-container.success input {
+        border-color: green;
+      }
+      .form-container.error small {
+        visibility: visible;
+        color: red;
+      }
+      .form-container.success small {
+        visibility: hidden;
+      }
+      .form-container.error input {
+        border-color: red;
+      }
+      #list .active {
+        color: white;
+      }
+      @media (max-width: 1350px) {
+        .form-container i {
+          margin-left: 33%;
+        }
+      }
+      @media (max-width: 1250px) {
+        .form-container i {
+          margin-left: 30%;
+        }
+      }
+
+      @media (max-width: 1300px) {
+        .header {
+          display: flex;
+          text-align: center;
+        }
+      }
+      @media (max-width: 980px) {
+        .form-container i {
+          margin-left: 26%;
+        }
+      }
+      @media (max-width: 800px) {
+        .flex-container {
+          display: block;
+        }
+
+        #zcode,
+        #picture,
+        #dsign {
+          width: 90%;
+        }
+        .sidebar {
+          display: none;
+        }
+        #bar {
+          display: block;
+        }
+        .form-container i {
+          margin-left: 55%;
+        }
+      }
+      @media (max-width: 750px) {
+        .form-container i {
+          margin-left: 50%;
+        }
+      }
+      @media (max-width: 650px) {
+        .form-container i {
+          margin-left: 45%;
+        }
+      }
+      @media (max-width: 580px) {
+        .form-container i {
+          margin-left: 40%;
+        }
+      }
+      @media (max-width: 550px) {
+        .form-container i {
+          display: none;
+        }
+      }
+
+      #co {
+        visibility: visible;
+      }
+      small {
+        visibility: hidden;
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="b">
+      <!-- //sidebar -->
+      <div class="sidebar">
+        <ul class="list-unstyled">
+          <li>
+            <a href="#user" data-toggle="collapse">Users</a>
+            <ul id="user" class="collapse">
+              <li>
+                <a
+                  href="#create"
+                  data-toggle="collapse"
+                  class="dropdown-collapse"
+                  >Create User</a
+                >
+
+                <ul id="create" class="collapse">
+                  <li id="list"><a href="#">Admin</a></li>
+                  <li id="list1"><a href="#">Scheduler</a></li>
+                  <li id="doc"><a href="#">Doctor</a></li>
+                  <li id="list2"><a href="#">Doctor Assistant</a></li>
+                  <li id="list3"><a href="#">Front Desk</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#use" data-toggle="collapse" class="dropdown-collapse"
+                  >View User</a
+                >
+
+                <ul id="use" class="collapse">
+                  <li><a href="#">Admin</a></li>
+                  <li><a href="#">Scheduler</a></li>
+                  <li><a href="#">Doctor</a></li>
+                  <li><a href="#">Doctor Assistant</a></li>
+                  <li><a href="#">Front Desk</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- //navbar -->
+
+      <div class="header" style="z-index: 1111">
+        <button id="bar"><i class="fa fa-bars"></i></button>
+      </div>
+    </div>
+
+    <div class="a" style="z-index: 1">
+      <form style="margin-top: 40px">
+        <div style="display: block">
+          <div class="flex-container">
+            <div style="display: block" id="first">
+              <div>
+                <label>First Name</label><span style="color: red">*</span>
+              </div>
+              <div class="form-container">
+                <input type="text" id="fname" /><br />
+                <i class="fas fa-exclamation-circle"></i>
+                <i class="fas fa-check-circle"></i>
+                <small>Error</small>
+              </div>
+            </div>
+            <div style="display: block" id="second">
+              <div>
+                <label>Second Name</label><span style="color: red">*</span>
+              </div>
+              <div class="form-container">
+                <input type="text" id="sname" /><br />
+                <i class="fas fa-exclamation-circle"></i>
+                <i class="fas fa-check-circle"></i>
+                <small>Error</small>
+              </div>
+            </div>
+          </div>
+          <br />
+          <div class="flex-container">
+            <div style="display: block" id="address1">
+              <div>
+                <label>Address Line1</label><span style="color: red">*</span>
+              </div>
+              <div class="form-container">
+                <input type="text" id="line1" /><br />
+                <i class="fas fa-exclamation-circle"></i>
+                <i class="fas fa-check-circle"></i>
+                <small>Error</small>
+              </div>
+            </div>
+            <div style="display: block" id="address2">
+              <div>
+                <label>Address Line2</label><span style="color: red">*</span>
+              </div>
+              <div class="form-container">
+                <input type="text" id="line2" /><br />
+                <i class="fas fa-exclamation-circle"></i>
+                <i class="fas fa-check-circle"></i>
+                <small>Error</small>
+              </div>
+            </div>
+          </div>
+          <br />
+
+          <div class="flex-container">
+            <div style="display: block" id="address3">
+              <div><label>Address Line3</label></div>
+              <div><input type="text" id="line3" /></div>
+            </div>
+            <div style="display: block" id="address4">
+              <div><label>Address Line4</label></div>
+              <div><input type="text" id="line4" /></div>
+            </div>
+          </div>
+          <br />
+          <div class="flex-container">
+            <div style="display: block" id="code">
+              <div><label>Zipcode</label><span style="color: red">*</span></div>
+              <div class="form-container">
+                <input type="text" id="zcode" /><br />
+                <i class="fas fa-exclamation-circle"></i>
+                <i class="fas fa-check-circle"></i>
+                <small>Error</small>
+              </div>
+            </div>
+          </div>
+          <br />
+          <h2 id="cd">Contact Details</h2>
+
+          <div class="flex-container">
+            <div style="display: block" id="email">
+              <div>
+                <label for="mail">Email Id</label
+                ><span style="color: red">*</span>
+              </div>
+              <div class="form-container">
+                <input type="email" id="mail" /><br />
+                <i class="fas fa-exclamation-circle"></i>
+                <i class="fas fa-check-circle"></i>
+                <small>Error</small>
+              </div>
+            </div>
+            <div style="display: block" id="aemail">
+              <div><label>Alternate Email</label></div>
+              <div><input type="email" id="amail" /></div>
+            </div>
+          </div>
+          <br />
+          <div class="flex-container">
+            <div style="display: block" id="mno">
+              <div>
+                <label>Mobile No</label><span style="color: red">*</span>
+              </div>
+              <div class="form-container">
+                <input type="number" id="num" /><br />
+                <i class="fas fa-exclamation-circle"></i>
+                <i class="fas fa-check-circle"></i>
+                <small>Error</small>
+              </div>
+            </div>
+            <div style="display: block" id="amno">
+              <div><label>Alternate Mobile Number</label></div>
+              <div><input type="number" id="num2" /></div>
+            </div>
+          </div>
+          <br />
+          <div id="otd">
+            <h2 id="cd">Other Details</h2>
+            <div class="flex-container">
+              <div style="display: block" id="pfile">
+                <div>
+                  <label>Profile picture</label
+                  ><span style="color: red">*</span>
+                </div>
+                <br />
+                <div class="form-container">
+                  <input type="file" id="picture" /><br />
+
+                  <small>Error</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="dotd">
+            <h2 id="cd">Other Details</h2>
+            <div class="flex-container">
+              <div style="display: block" id="mnon">
+                <div>
+                  <label>Doctor ID</label><span style="color: red">*</span>
+                </div>
+                <div class="form-container">
+                  <input type="text" id="doc1" /><br />
+                  <i class="fas fa-exclamation-circle"></i>
+                  <i class="fas fa-check-circle"></i>
+                  <small>Error</small>
+                </div>
+              </div>
+              <div style="display: block" id="amnon">
+                <div>
+                  <label>Speciality</label><span style="color: red">*</span>
+                </div>
+                <div class="form-container">
+                  <input type="text" id="spc" /><br />
+                  <i class="fas fa-exclamation-circle"></i>
+                  <i class="fas fa-check-circle"></i>
+                  <small>Error</small>
+                </div>
+              </div>
+            </div>
+            <div class="flex-container" style="margin-top: 10px">
+              <div style="display: block" id="mnon1">
+                <div>
+                  <label>License No</label><span style="color: red">*</span>
+                </div>
+                <div class="form-container">
+                  <input type="text" id="lno" /><br />
+                  <i class="fas fa-exclamation-circle"></i>
+                  <i class="fas fa-check-circle"></i>
+                  <small>Error</small>
+                </div>
+              </div>
+              <div style="display: block" id="amnon1">
+                <div><label>WCB License No</label></div>
+                <div><input type="text" id="num2" /></div>
+              </div>
+            </div>
+            <div class="flex-container" style="margin-top: 10px">
+              <div style="display: block" id="code1">
+                <div>
+                  <label>Digital Signature</label
+                  ><span style="color: red">*</span>
+                </div>
+                <div class="form-container">
+                  <input type="file" id="dsign" /><br />
+
+                  <small>Error</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="su">
+            <button id="sub">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <script>
+      function opentab(tabmenu) {
+        var i;
+        var x = document.getElementsByClassName("tab");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        document.getElementById(tabmenu).style.display = "block";
+      }
+      $("document").ready(function () {
+        $("#bar").click(function () {
+          $(".sidebar").toggle();
+        });
+      });
+      $("document").ready(function () {
+        $("#list").click(function () {
+          $(".a").show();
+          $("#dotd").hide();
+          $("#otd").show();
+          $(this).addClass("active");
+        });
+      });
+      $("document").ready(function () {
+        $("#list1").click(function () {
+          $(".a").show();
+          $("#dotd").hide();
+          $("#otd").show();
+        });
+      });
+      $("document").ready(function () {
+        $("#list2").click(function () {
+          $(".a").show();
+          $("#dotd").hide();
+          $("#otd").show();
+        });
+      });
+      $("document").ready(function () {
+        $("#list3").click(function () {
+          $(".a").show();
+          $("#dotd").hide();
+          $("#otd").show();
+        });
+      });
+      $("document").ready(function () {
+        $("#doc").click(function () {
+          $(".a").show();
+          $("#dotd").show();
+          $("#otd").hide();
+        });
+      });
+
+      const fsname = document.querySelector("#fname");
+      const ssname = document.querySelector("#sname");
+      const adl1 = document.querySelector("#line1");
+      const adl2 = document.querySelector("#line2");
+      const zpcode = document.querySelector("#zcode");
+      const nemail = document.querySelector("#mail");
+      const phn = document.querySelector("#num");
+      const prpic = document.querySelector("#picture");
+      const doct = document.querySelector("#doc1");
+      const spec = document.querySelector("#spc");
+      const licno = document.querySelector("#lno");
+      const digital = document.querySelector("#dsign");
+      const submit = document.querySelector("#sub");
+
+      submit.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (fsname.value.trim() === "") {
+          error(fsname, "username cannot be empty");
+        } else {
+          success(fsname);
+        }
+        if (ssname.value.trim() === "") {
+          error(ssname, "password cannot be empty");
+        } else {
+          success(ssname);
+        }
+        if (adl1.value.trim() === "") {
+          error(adl1, "address1 cannot be empty");
+        } else {
+          success(adl1);
+        }
+        if (adl2.value.trim() === "") {
+          error(adl2, "address cannot be empty");
+        } else {
+          success(adl2);
+        }
+        if (zpcode.value.trim() === "") {
+          error(zpcode, "Zipcode cannot be empty");
+        } else {
+          success(zpcode);
+        }
+        if (nemail.value.trim() === "") {
+          error(nemail, "email cannot be empty or provide valid email id");
+        } else if (!isEmail(nemail.value.trim())) {
+          error(nemail, "provide valid email ");
+        } else {
+          success(nemail);
+        }
+        if (phn.value.trim() === "") {
+          error(phn, "mobile number cannot be empty");
+        } else if (phn.value.length < 10 || phn.value.length > 15) {
+          error(phn, "Mobile No Min10 & Max15");
+        } else {
+          success(phn);
+        }
+        if (prpic.value.trim() === "") {
+          error(prpic, "profile picture cannot be empty");
+        } else {
+          success(prpic);
+        }
+        if (doct.value.trim() === "") {
+          error(doct, "DoctorID cannot be empty");
+        } else {
+          success(doct);
+        }
+        if (spec.value.trim() === "") {
+          error(spec, "speciality cannot be empty");
+        } else {
+          success(spec);
+        }
+        if (licno.value.trim() === "") {
+          error(licno, "license no cannot be empty");
+        } else {
+          success(licno);
+        }
+        if (digital.value.trim() === "") {
+          error(digital, "digital Sign cannot be empty");
+        } else {
+          success(digital);
+        }
+      });
+      function error(element, msg) {
+        element.style.border = "1px solid red";
+        const parent = element.parentElement;
+        const small = parent.querySelector("small");
+        parent.className = "form-container error";
+        small.innerText = msg;
+      }
+      function success(element) {
+        element.style.border = "1px solid green";
+        const parent = element.parentElement;
+        parent.className = "form-container success";
+      }
+      function isEmail(nemail) {
+        return /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(
+          nemail
+        );
+      }
+    </script>
+  </body>
+</html>
